@@ -3,13 +3,14 @@
 internal class Sphere : IShape
 {
     public string Name => nameof(Sphere);
+    public double Radius => Outline.Radius;
     public Circle Outline { get; }
-    public Sphere(Circle circle)
+    public Sphere(double x, double y, double radius)
     {
-        Outline = circle;
+        Outline = new Circle(x, y, radius);
     }
     public double GetSize()
     {
-        return 4 * Math.PI * Math.Pow(Outline.Contour.Radius, 2);
+        return 4 * Math.PI * Math.Pow(Radius, 2);
     }
 }

@@ -3,11 +3,11 @@
 internal class Circuit : IShape
 {
     public string Name => nameof(Circuit);
-    public Point Center { get; }
     public double Radius { get; }
-    public Circuit(Point point, double radius)
+    public Point Center { get; }
+    public Circuit(double x, double y, double radius)
     {
-        Center = point;
+        Center = new Point(x, y);
         Radius = radius;
     }
     public double GetSize()
