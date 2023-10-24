@@ -2,8 +2,9 @@
 
 internal class Point : IShape
 {
-    public double X { get; set; }
-    public double Y { get; set; }
+    public string Name => nameof(Point);
+    public double X { get; }
+    public double Y { get; }
     public Point(double x, double y)
     {
         X = x;
@@ -12,9 +13,5 @@ internal class Point : IShape
     public double GetSize()
     {
         return 0;
-    }
-    public string GetName()
-    {
-        return nameof(Point);
     }
 }

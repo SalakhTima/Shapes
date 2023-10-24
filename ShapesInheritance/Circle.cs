@@ -2,7 +2,8 @@
 
 internal class Circle : Circuit
 {
-    public Circuit Contour { get; set; }
+    public override string Name => nameof(Circle);
+    public Circuit Contour { get; }
     public Circle(double radius, double x, double y) : base(radius, x, y)
     {
         Contour = new Circuit(radius, x, y);
@@ -10,9 +11,5 @@ internal class Circle : Circuit
     public override double GetSize()
     {
         return Math.PI * Math.Pow(Radius, 2);
-    }
-    public override string GetName()
-    {
-        return nameof(Circle);
     }
 }

@@ -2,8 +2,9 @@
 
 internal class Circuit : IShape
 {
-    public Point Center { get; set; }
-    public double Radius { get; set; }
+    public string Name => nameof(Circuit);
+    public Point Center { get; }
+    public double Radius { get; }
     public Circuit(Point point, double radius)
     {
         Center = point;
@@ -12,9 +13,5 @@ internal class Circuit : IShape
     public double GetSize()
     {
         return 2 * Math.PI * Radius;
-    }
-    public string GetName()
-    {
-        return nameof(Circuit);
     }
 }

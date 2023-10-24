@@ -2,7 +2,8 @@
 
 internal class Sphere : Circle
 {
-    public Circle Outline { get; set; }
+    public override string Name => nameof(Sphere);
+    public Circle Outline { get; }
     public Sphere(double radius, double x, double y) : base(radius, x, y)
     {
         Outline = new Circle(radius, x, y);
@@ -10,9 +11,5 @@ internal class Sphere : Circle
     public override double GetSize()
     {
         return 4 * Math.PI * Math.Pow(Radius, 2);
-    }
-    public override string GetName()
-    {
-        return nameof(Sphere);
     }
 }

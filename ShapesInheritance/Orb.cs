@@ -2,7 +2,8 @@
 
 internal class Orb : Sphere
 {
-    public Sphere Core { get; set; }
+    public override string Name => nameof(Orb);
+    public Sphere Core { get; }
     public Orb(double radius, double x, double y) : base(radius, x, y)
     {
         Core = new Sphere(radius, x, y);
@@ -10,9 +11,5 @@ internal class Orb : Sphere
     public override double GetSize()
     {
         return 4.0 / 3.0 * Math.PI * Math.Pow(Radius, 3);
-    }
-    public override string GetName()
-    {
-        return nameof(Orb);
     }
 }

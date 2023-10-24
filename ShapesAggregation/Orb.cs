@@ -2,7 +2,8 @@
 
 internal class Orb : IShape
 {
-    public Sphere Core { get; set; }
+    public string Name => nameof(Orb);
+    public Sphere Core { get; }
     public Orb(Sphere sphere)
     {
         Core = sphere;
@@ -10,9 +11,5 @@ internal class Orb : IShape
     public double GetSize()
     {
         return 4.0 / 3.0 * Math.PI * Math.Pow(Core.Outline.Contour.Radius, 3);
-    }
-    public string GetName()
-    {
-        return nameof(Orb);
     }
 }

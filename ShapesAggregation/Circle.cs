@@ -2,7 +2,8 @@
 
 internal class Circle : IShape
 {
-    public Circuit Contour { get; set; }
+    public string Name => nameof(Circle);
+    public Circuit Contour { get; }
     public Circle(Circuit circuit)
     {
         Contour = circuit;
@@ -10,9 +11,5 @@ internal class Circle : IShape
     public double GetSize()
     {
         return Math.PI * Math.Pow(Contour.Radius, 2);
-    }
-    public string GetName()
-    {
-        return nameof(Circle);
     }
 }

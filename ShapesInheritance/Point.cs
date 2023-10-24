@@ -2,8 +2,9 @@
 
 internal class Point : Shape
 {
-    public double X { get; set; }
-    public double Y { get; set; }
+    public override string Name => nameof(Point);
+    public double X { get; }
+    public double Y { get; }
     public Point(double x, double y)
     {
         X = x;
@@ -12,9 +13,5 @@ internal class Point : Shape
     public override double GetSize()
     {
         return 0;
-    }
-    public override string GetName()
-    {
-        return nameof(Point);
     }
 }

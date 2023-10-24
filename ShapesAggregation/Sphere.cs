@@ -2,7 +2,8 @@
 
 internal class Sphere : IShape
 {
-    public Circle Outline { get; set; }
+    public string Name => nameof(Sphere);
+    public Circle Outline { get; }
     public Sphere(Circle circle)
     {
         Outline = circle;
@@ -10,9 +11,5 @@ internal class Sphere : IShape
     public double GetSize()
     {
         return 4 * Math.PI * Math.Pow(Outline.Contour.Radius, 2);
-    }
-    public string GetName()
-    {
-        return nameof(Sphere);
     }
 }
